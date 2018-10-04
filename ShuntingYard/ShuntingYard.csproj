@@ -49,5 +49,11 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Shunting_Yard.lib\Shunting_Yard.lib.csproj">
+      <Project>{172f5ada-5739-4f88-a7fb-7e2e817dafe3}</Project>
+      <Name>Shunting_Yard.lib</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
