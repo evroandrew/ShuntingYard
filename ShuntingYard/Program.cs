@@ -11,7 +11,7 @@ namespace SYard
     {
         static void Main(string[] args)
         {
-            string input = "( 2 + 2 ) * ( 2 - 6 )";
+            string input = "( -2 + 2 ) * ( 2 - 6 )";
             double output = 0;
             Console.WriteLine($"input: {input}\n");
             ShuntingYard s = new ShuntingYard(input, ref output);

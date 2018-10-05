@@ -87,6 +87,14 @@ namespace UnitTestProject1
             Assert.AreEqual(output, -9);
         }
         [TestMethod]
+        public void TestMethod_18()
+        {
+            string input = "-7 - 16";
+            double output = 0;
+            ShuntingYard s = new ShuntingYard(input, ref output);
+            Assert.AreEqual(output, -23);
+        }
+        [TestMethod]
         public void TestMethod_7()
         {
             string input = "( 2 + 2 ) * ( 2 - 6 )";

@@ -129,13 +129,18 @@ namespace Shunting_Yard.lib
                 {
                     if (first == "-1") status = 0;
                     else if (is_operator(first)) post.Add(stack.Pop());
-                    else if (first == "(") {  stack.Pop(); i++; }
+                    else if (first == "(") { stack.Pop(); i++; }
                 }
                 else if (inf[i] == "$")
                 {
                     if (first == "-1") status = 1;
                     else if (is_operator(first)) post.Add(stack.Pop());
                     else if (first == "(") status = 0;
+                }
+                else if (inf[i][0] == '-')
+                {
+                    post.Add(inf[i]);
+                    i++;
                 }
                 else status = 0;
             }
@@ -179,6 +184,10 @@ namespace Shunting_Yard.lib
                     var_2 = stack.Pop();
                     var_1 = stack.Pop();
                     stack.Push(var_1 / var_2);
+                }
+                else
+                {
+                    stack.Push(Double.Parse(post[i]));
                 }
             }
             return stack.Pop();
